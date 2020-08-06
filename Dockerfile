@@ -84,5 +84,5 @@ RUN apt-get update \
     && chmod +x /usr/local/tomcat/tmp/get_dockerhost_ip.py \
     && chmod +x /usr/local/tomcat/tmp/get_nginxhost_ip.py
 
-ENV JAVA_OPTS="-javaagent:/tmp/apm.jar -Delastic.apm.service_name=springboot -Delastic.apm.application_packages=org.example,org.another.example -Delastic.apm.server_urls=http://192.168.10.145:8200 -Djava.awt.headless=true -XX:MaxPermSize=512m -XX:PermSize=256m -Xms512m -Xmx2048m -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:ParallelGCThreads=4 -Dfile.encoding=UTF8 -Duser.timezone=GMT -Djavax.servlet.request.encoding=UTF-8 -Djavax.servlet.response.encoding=UTF-8 -Duser.timezone=GMT -Dorg.geotools.shapefile.datetime=true"
+ENV JAVA_OPTS="-javaagent:/tmp/elastic-apm-agent-1.18.0.RC1.jar -Delastic.apm.service_name=springboot -Delastic.apm.application_packages=org.example,org.another.example -Delastic.apm.server_urls=http://192.168.10.145:8200 -Djava.awt.headless=true -XX:MaxPermSize=512m -XX:PermSize=256m -Xms512m -Xmx2048m -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:ParallelGCThreads=4 -Dfile.encoding=UTF8 -Duser.timezone=GMT -Djavax.servlet.request.encoding=UTF-8 -Djavax.servlet.response.encoding=UTF-8 -Duser.timezone=GMT -Dorg.geotools.shapefile.datetime=true"
 CMD ["/usr/local/tomcat/tmp/entrypoint.sh"]
